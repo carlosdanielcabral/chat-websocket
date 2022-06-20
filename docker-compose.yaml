@@ -1,8 +1,18 @@
 version: '3'
 
 services:
+  backend:
+    build: ./backend
+    restart: always
+    ports:
+      - 3001:3001
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
   frontend:
     build: ./frontend
+    depends_on:
+      - backend
     restart: always
     ports:
       - 3000:3000
