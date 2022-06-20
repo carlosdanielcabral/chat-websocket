@@ -1,0 +1,78 @@
+.paginaSala {
+  --default-border: 1px solid rgb(200 200 200);
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.paginaSala header {
+  height: 10%;
+  width: 100vw;
+}
+
+.mainContainer {
+  align-items: center;
+  display: flex;
+  height: 90%;
+  justify-content: center;
+  position: relative;
+  width: 95%;
+}
+
+.mainContainer section {
+  align-items: center;
+  border: var(--default-border);
+  border-radius: 10px;
+  height: 90%;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.mainContainer textarea {
+  border: 0;
+  border-top: var(--default-border);
+  border-radius: 0 0 10px 10px;
+  box-sizing: border-box;
+  color: rgb(50 50 50);
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.mainContainer textarea::-webkit-scrollbar {
+  background-color: rgba(200 200 200 / 0);
+  width: 8px;
+}
+
+.mainContainer textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(200 200 200 / 0);
+  border-radius: 20px;
+  transition: 500ms;
+}
+
+.mainContainer textarea:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(200 200 200 / 1);
+}
+
+.mainContainer button {
+  background-color: rgb(0, 98, 255);;
+  border: none;
+  border-radius: 5px;
+  bottom: 0;
+  box-sizing: border-box;
+  color: white;
+  font-size: 12px;
+  height: 25px;
+  margin: 13px;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 50px;
+}
