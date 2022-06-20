@@ -45,6 +45,10 @@
   width: 100%;
 }
 
+.mainContainer textarea:focus {
+  outline: 1px solid rgb(31, 154, 255);
+}
+
 .mainContainer textarea::-webkit-scrollbar {
   background-color: rgba(200 200 200 / 0);
   width: 8px;
