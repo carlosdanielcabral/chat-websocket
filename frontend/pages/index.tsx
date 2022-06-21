@@ -1,17 +1,19 @@
-import { EventHandler, FormEvent, FormEventHandler, useState } from 'react'
+import { EventHandler, FormEvent, FormEventHandler, useContext, useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import AppContext from '../context/AppContext';
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
+  const { nome, setNome } = useContext(AppContext);
   const router = useRouter();
-  const [sala, setSala] = useState('');
-  const [nome, setNome] = useState('');
+  const [sala, setSala] = useState('Esporte');
 
   const irParaASala = (e: FormEvent) => {
     e.preventDefault();
+    console.log(nome);
     router.push(`/salas/${sala}`)
   }
 
@@ -31,8 +33,11 @@ const Home: NextPage = () => {
               />
             </div>
             <div className="input-field col s12">
-              <select className="form-select my-3" onChange={ (e) => setSala(e.target.value) }>
-                <option value="" disabled selected>Escolha uma sala</option>
+              <select
+                className="form-select my-3"
+                onChange={ (e) => setSala(e.target.value) }
+                defaultValue="esporte"
+              >
                 <option value="esporte">Esporte</option>
                 <option value="estilo-de-vida">Estilo de vida</option>
                 <option value="musica">Música</option>

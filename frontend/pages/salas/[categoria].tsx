@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import { useRouter } from 'next/router';
+import AppContext from '../../context/AppContext';
 import estilos from '../../styles/Sala.module.css';
 import SOCKET from '../../services/socket';
 
 const Sala = () => {
+  const { nome } = useContext(AppContext);
+  const router = useRouter()
+  const { categoria } = router.query
+
   SOCKET.on('connection', () => {
     console.log(`I'm connected with the back-end`);
   });
+
+  SOCKET.emit('sala_selecionada', { nome, sala: categoria });
 
   return (
     <div className={ estilos.paginaSala }>
