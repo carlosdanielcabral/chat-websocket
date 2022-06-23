@@ -9,7 +9,7 @@ import styles from '../styles/Home.module.css'
 const Home: NextPage = () => {
   const { nome, setNome } = useContext(AppContext);
   const router = useRouter();
-  const [sala, setSala] = useState('Esporte');
+  const [sala, setSala] = useState('esporte');
 
   const irParaASala = (e: FormEvent) => {
     e.preventDefault();
@@ -36,7 +36,7 @@ const Home: NextPage = () => {
               <select
                 className="form-select my-3"
                 onChange={ (e) => setSala(e.target.value) }
-                defaultValue="esporte"
+                value={sala}
               >
                 <option value="esporte">Esporte</option>
                 <option value="estilo-de-vida">Estilo de vida</option>
