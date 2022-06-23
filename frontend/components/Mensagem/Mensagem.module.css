@@ -1,0 +1,16 @@
+.mensagem {
+  padding: 10px;
+}
+
+.mensagem .usuario {
+  color: rgb(80 80 80);
+}
+
+.mensagem .usuario small:nth-child(1) {
+  border-right: 1px solid rgb(200 200 200);
+  padding-right: 10px;
+}
+
+.mensagem .usuario small:nth-child(2) {
+  padding-left: 10px;
+}
